@@ -10,7 +10,7 @@
 	$id = $_SESSION['id'];
 
 	$num = preg_match('/^(010)[0-9]{4}[0-9]{4}/', $phoneNum);
-	if(!$name || !$postcode || !$address || !$detailAddress || !$phoneNum){
+	if(!$name || !$postcode || !$address || !$detailAddress || !$extraAddress || !$phoneNum){
 		echo "<script>
 			alert('입력되지 않은 정보가 존재합니다.');
 			history.back();
@@ -25,10 +25,8 @@
 		</script>";
 	}
 	else{
-		$detail = $detailAddress." ".$extraAddress;
-
 		$db_conn = mysqli_connect('localhost', 'bitnami', '1234', 'Destination') or die('fail');
-		$sql = "INSERT INTO desInfo(name, postcode, address, detailAddr, phoneNum, id, defaultDes) VALUES('$name', '$postcode', '$address', '$detail', '$phoneNum', '$id', 0);";
+		$sql = "INSERT INTO desInfo(name, postcode, address, detailAddr, extraAddr, phoneNum, id, defaultDes) VALUES('$name', '$postcode', '$address', '$detailAddress', '$extraAddress','$phoneNum', '$id', 0);";
 		$query_res = mysqli_query($db_conn, $sql);
 
 		if($query_res){

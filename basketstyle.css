@@ -1,0 +1,62 @@
+/*{margin:0 auto; padding: 0;}
+ul li {list-style: none;}*/
+
+/*a {color:#333; text-decoration: none;}
+img {vertical-align: top; border: 0;}*/
+
+/*#main_in{
+	width:950px;
+	position: relative;
+}*/
+
+#content{
+	width:950px;
+	position: relative;
+	margin-top:30px;
+}
+
+.list-table{
+	margin-top:40px;
+	position: relative;
+}
+
+.list-table thead th{
+	height:40px;
+	border-top:2px solid #09C;
+	border-bottom:1px solid #CCC;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.list-table tbody td{
+	text-align:center;
+	padding:10px 0;
+	border-bottom:1px solid #CCC; height:20px;
+	font-size:14px
+}
+
+.bak_item{
+	height: 170px;
+	margin-top: 20px;
+}
+
+
+.pro_name{
+	font:bold 16px 'malgun gothic';
+	/*margin-left: 165px;*/
+	margin-top: 10px;
+	color: black;
+}
+
+.pro_author{
+	font:bold 16px 'malgun gothic';
+	/*margin-left: 165px;*/
+	margin-top: 10px;
+	color: black;
+}
+
+/*footer {
+	width: 100%;
+	height: 70px;
+}*/
+

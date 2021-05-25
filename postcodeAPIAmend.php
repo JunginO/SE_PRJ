@@ -16,13 +16,13 @@
 </head>
 <body>
     <form method="POST" action="amendDest.php">
-        <input type="hidden" name="num" value="<?php echo $des_row['NUM'] ?>">
+        <input type="hidden" name="num" value="<?php echo $db_row['NUM']; ?>">
         <input type="text" placeholder="이름" name='name' value="<?php echo $db_row['name']; ?>"><br><br>
         <input type="text" id="postcode" placeholder="우편번호" name='postcode' value="<?php echo $db_row['postcode']; ?>"readonly>
         <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기"><br>
-        <input type="text" id="address" placeholder="주소" name='address' readonly><br>
-        <input type="text" id="detailAddress" placeholder="상세주소" name='detailAddress'>
-        <input type="text" id="extraAddress" placeholder="참고항목" name='extraAddress' readonly><br><br>
+        <input type="text" id="address" placeholder="주소" name='address' value="<?php echo $db_row['address']; ?>"readonly><br>
+        <input type="text" id="detailAddress" placeholder="상세주소" name='detailAddress' value="<?php echo $db_row['detailAddr']; ?>">
+        <input type="text" id="extraAddress" placeholder="참고항목" name='extraAddress' value="<?php echo $db_row['extraAddr']; ?>"readonly><br><br>
         <input type="text" placeholder="연락처(010********)" name='phoneNum' value="<?php echo $db_row['phoneNum']; ?>"><text style="color: gray; font-size: 9pt;">  * '-'을 제외하고, 숫자만 입력.</text><br><br>
         <input type="checkbox" name="isDefault" value=1><text style="color: black; font-size: 9pt;">기본배송지로 지정</text><br><br>
         <input type="submit" value = "수정"><text style="color: gray; font-size: 9pt;">  * 이름, 우편번호, 주소, 상세주소, 연락처는 필수항목</text>

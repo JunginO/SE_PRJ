@@ -56,6 +56,7 @@
 					"<form method='POST' action='deleteDest.php'>&nbsp;
 					<input type='hidden' name='rmRow' value='".$des_row['NUM']."'>
 					<input type='submit' value='삭제'></form></td>";
+
 				echo "</tr></table>";
 			}
 		?>
