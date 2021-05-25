@@ -97,6 +97,7 @@
 		</form>
 		<h2>책 정보 출력</h2>
 		<table>
+			<tr>
 			<th>삭제</th>
 			<th>수정</th>
 			<th>상품번호</th>
@@ -106,7 +107,8 @@
 			<th>책상세정보</th>
 			<th>저자</th>
 			<th>가격</th>
-			<th>이미지</th>	
+			<th>이미지</th>
+			</tr>
 		<?php
 			error_reporting(E_ALL);
 			ini_set( "display_errors", 1 );

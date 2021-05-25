@@ -60,7 +60,7 @@
 		$result = mysqli_query($conn, $sql1);
 	}
 	else{
-		$sql2 = "SELECT bookdata.*, upfile.* FROM bookdata INNER JOIN upfile ON bookdata.book_num = upfile.image_num ORDER BY price ASC";
+		$sql2 = "SELECT bookdata.*, upfile.* FROM bookdata INNER JOIN upfile ON bookdata.book_num = upfile.image_num WHERE (price>='$min' AND price<='$max') AND book_name LIKE '%$book_name%' ORDER BY price ASC";
 		$result =  mysqli_query($conn, $sql2);
 	}
 

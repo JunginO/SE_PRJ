@@ -83,7 +83,6 @@
 						<li><a href='eventlist.php'>공지/이벤트</a></li>
 				</ul>
 				";
-
 		}
 		//content 레이아웃
 		public function LayoutContent(){
