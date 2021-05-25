@@ -1,4 +1,8 @@
 <?php
+//url 접근 막기
+session_start();
+if($_SESSION['id']=='admin'){
+
 	class AdminLayout{
 		public $content;
 		public $style;
@@ -65,4 +69,13 @@
 				</footer>";
 		}
 	}
+
+} else{
+
+	echo "<script>
+                alert('잘못된 접근입니다. 관리자 로그인 필요');
+                location.href='adminlogin.php';
+                exit();
+            </script>";
+}
 ?>
