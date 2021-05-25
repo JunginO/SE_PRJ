@@ -44,8 +44,8 @@
 		public function AdminLayoutMenu(){
 			echo"
 				<ul id = 'menu'>
-					<li><a href='#'>상품 관리</a></li>
-					<li><a href='#'>공지/이벤트 관리</a></li>
+					<li><a href='book_list.php'>상품 관리</a></li>
+					<li><a href='adminevent_list.php'>공지/이벤트 관리</a></li>
 				</ul>
 			";
 		}

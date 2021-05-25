@@ -1,13 +1,24 @@
+<?php
+	include_once "adminLayout.inc";
+	$admin = new AdminLayout;
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>책정보 추가/수정/삭제</title>
-		<style> 
-			th {border-top: 3px solid rgb(51, 175, 233); border-bottom:  1.5px solid rgb(160, 160, 160); padding: 3px;}
-		</style>
-	</head>	
+	<?php 
+		$admin->AdminLayoutStyle();
+	?>
+	<style>
+		th {border-top: 3px solid rgb(51, 175, 233); border-bottom:  1.5px solid rgb(160, 160, 160); padding: 3px;}
+	</style>
+</head>
 	<body>
+		<?php
+			$admin->AdminLayoutHeader();
+			$admin->AdminLayoutMenu();
+		?>
+		<article>
 		<h1>책정보 추가</h1>
 		<!--categoty/cate_dec/book_name/book_detail/author/price/book_image(이것만 다른 db임)-->
 		<form name = "add_book" method="post" enctype="multipart/form-data" action = "book_list_upload.php">
@@ -54,7 +65,7 @@
 
 		<h1></h1>
 		<!--상품이름, 가격, 상품가격으로 필터링-->
-		책 필터링
+		<h2>책 필터링</h2>
 		<form action="book_list_sort.php" method = "post">
 			<table>
 				<th>책이름 검색</th>
@@ -85,8 +96,9 @@
 
 			</table>	
 		</form>
-
+		<h2>책 정보 출력</h2>
 		<table>
+			<tr>
 			<th>삭제</th>
 			<th>수정</th>
 			<th>상품번호</th>
@@ -96,7 +108,8 @@
 			<th>책상세정보</th>
 			<th>저자</th>
 			<th>가격</th>
-			<th>이미지</th>	
+			<th>이미지</th>
+			</tr>
 		<?php
 			error_reporting(E_ALL);
 			ini_set( "display_errors", 1 );
@@ -126,6 +139,9 @@
    		?>
    		</table>
    		</form>
-
+   	</article>
+   		<?php
+   			$admin->AdminLayoutFooter();
+   		?>
 	</body>
 </html>
