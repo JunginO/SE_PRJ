@@ -4,7 +4,6 @@
 	$base = new Layout;
 
 	$base->link = './style.css';
-	$base->style = 'th,td{padding : 5px;}';
 	
 	$base->content="
 		<form action = 'registerUser.php' method = 'POST'>
