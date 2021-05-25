@@ -1,31 +1,37 @@
 <?php
+//url 접근 막기
+session_start();
+if($_SESSION['id']=='admin'){
+
 	class AdminLayout{
 		public $content;
+		public $style;
+
 		//레이아웃 출력
 		public function AdminLayoutMain(){
 			session_start();
 			echo "<!DOCTYPE html>";
 
 			echo "<head><meta charset = 'utf-8'/>
-					<title>AdminPage</title>";
-			echo 	$this->AdminLayoutStyle();
-			echo "</head>";
+					<title>AdminPage</title>
+					<link rel='stylesheet' type='text/css' href='adminStyle.css'>
+				</head>";
 
 			echo "<body>";
 			echo	$this->AdminLayoutHeader(); //header 레이아웃
-			echo 	$this->AdminLayoutMenu();
 			echo	$this->AdminLayoutContent(); //content 레이아웃
 			echo	$this->AdminLayoutFooter(); //footer 레이아웃
 			echo "</body>
 				</html>";
 		}
-
 		public function AdminLayoutStyle(){
 			echo "<link rel='stylesheet' type='text/css' href='adminStyle.css'>";
+			echo "<style>".$this->style."</style>";
 		}
 
 		//header 레이아웃 
 		public function AdminLayoutHeader(){
+			session_start();
 			echo "<header>
 					<div style='display: inline-block; margin-right: 20px; vertical-align: top;'>
 						<a href='adminMainPage.php'><img src='./img/sampleLogo.png' height='100' width='100'></a>
@@ -40,13 +46,13 @@
 		}
 
 		public function AdminLayoutMenu(){
-			echo "<ul id = 'menu'>
-						<li><a href='#'>회원 관리</a></li>
-						<li><a href='#'>상품 관리</a></li>
-						<li><a href='#'>공지/이벤트 관리</a></li>
-			</ul>";
+			echo"
+				<ul id = 'menu'>
+					<li><a href='book_list.php'>상품 관리</a></li>
+					<li><a href='adminevent_list.php'>공지/이벤트 관리</a></li>
+				</ul>
+			";
 		}
-
 		//content 레이아웃
 		public function AdminLayoutContent(){
 			echo "<article><center>
@@ -63,4 +69,13 @@
 				</footer>";
 		}
 	}
+
+} else{
+
+	echo "<script>
+                alert('잘못된 접근입니다. 관리자 로그인 필요');
+                location.href='adminlogin.php';
+                exit();
+            </script>";
+}
 ?>
